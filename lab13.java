@@ -1,4 +1,4 @@
-package lab13;
+package lab13_lab;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class lab13 
 {
-	public ArrayList<Integer> values;
+	public ArrayList<Integer> values = new ArrayList<Integer>();
 	
 	public void readData(String filename)
 	{
@@ -22,6 +22,7 @@ public class lab13
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 			System.exit(0);
 		}
 	}
@@ -48,7 +49,7 @@ public class lab13
 	
 	public Integer[] getResult1()
 	{
-		return values.stream().filter(x -> x > 5 && x < 50).distinct().sorted().toArray(Integer[]::new);
+		return values.stream().filter(x -> x%2 == 0 && x > 5 && x < 50).sorted().toArray(Integer[]::new);
 	}
 	
 	public Integer[] getResult2()

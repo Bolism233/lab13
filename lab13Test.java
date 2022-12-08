@@ -1,3 +1,4 @@
+package lab13_lab;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
@@ -65,17 +66,28 @@ public class lab13Test
 			// put code here to populate expectedResult1 with the values in testData.get(0)
 			// so that you can use "assertArrayEquals" to verify expectedResult1 and lab.getResult1() are the same
 			expectedResult1 = new Integer[testData.get(0).size()];
+			for (int i = 0; i < testData.get(0).size(); i ++)
+			{
+				expectedResult1[i] = testData.get(0).get(i);
+			}
+			
 			
 			
 			// put code here to populate expectedResult2 with the values in testData.get(1)
 			// so that you can use "assertArrayEquals" to verify expectedResult2 and lab.getResult2() are the same
 			expectedResult2 = new Integer[testData.get(1).size()];
-			
+			for (int i = 0; i < testData.get(1).size(); i ++)
+			{
+				expectedResult2[i] = testData.get(1).get(i);
+			}
 			
 			// put code here to populate expectedResult3 with the values in testData.get(2)
 			// so that you can use "assertArrayEquals" to verify expectedResult3 and lab.getResult3() are the same
 			expectedResult3 = new Integer[testData.get(2).size()];	
-		
+			for (int i = 0; i < testData.get(2).size(); i ++)
+			{
+				expectedResult3[i] = testData.get(2).get(i);
+			}
 			
 		}
 		catch(Exception e)
@@ -89,6 +101,7 @@ public class lab13Test
 	void testGetTotalCount()
 	{
 		assertEquals(lab.getTotalCount(), 1000);
+		System.out.println("Total: " + lab.getTotalCount());
 	}
 	
 	@Test
@@ -98,9 +111,9 @@ public class lab13Test
 	}
 	
 	@Test
-	void testGetCount()
+	void testGetEvenCount()
 	{
-		assertEquals(lab.getOddCount(), 493);
+		assertEquals(lab.getEvenCount(), 493);
 	}
 	
 	@Test
@@ -112,12 +125,15 @@ public class lab13Test
 	@Test
 	void testgetResult1()
 	{
+		System.out.println("Expected: " + expectedResult1);
+		System.out.println("Actual: " + lab.getResult1());
 		assertArrayEquals(expectedResult1, lab.getResult1());
 	}
 	
 	@Test
 	void testgetResult2()
 	{
+		//lab.getResult2();
 		assertArrayEquals(expectedResult2, lab.getResult2());
 	}
 	
